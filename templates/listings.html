@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <a class="px-3 py-2 bg-sky-600 rounded-sm" href="/add-listing/">Add a new listing</a>
+  {% for listing in listings %}
+    <div class="px-3 py-2 bg-gray-300 rounded-sm">
+      <h1 class="px-3 py-2 inline-block">{{ listing.title }}</h1>
+      <a class="px-3 py-2 bg-gray-100 rounded-sm" href="/listing/{{ listing.id }}/">See more details.</a>
+      <a class="px-3 py-2 bg-green-600 rounded-sm" href="/listing/{{ listing.id }}/edit/">Edit</a>
+      <a class="px-3 py-2 bg-red-600 rounded-sm" href="/listing/{{ listing.id }}/delete/">Delete</a>
+    </div>
+  {% endfor %}
+{% endblock content %}
